@@ -5,5 +5,5 @@ export interface IActivities {
   imageURL: string;
   popularity: number;
   category: string;
-  keyword: string;
+  keywords: string;
 }

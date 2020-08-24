@@ -1,33 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Home
+      {{pageTitle}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="activityList">
-  <ion-card *ngFor="let activity of (activityList | async)">
+  <ion-card button *ngFor="let activity of activityList">
     <ion-img [src]="activity.imageURL"> </ion-img>
     <ion-card-title> {{activity.name}}</ion-card-title>
-  </ion-card>
-  <ion-card>
-    <ion-img src="assets/mkhozi.jpeg"> </ion-img>
-    <ion-card-title> </ion-card-title>
-  </ion-card>
-
-  <ion-card>
-    <ion-img src="assets/zwink.jpeg"> </ion-img>
-    <ion-card-title> </ion-card-title>
-  </ion-card>
-
-  <ion-card>
-    <ion-img src="assets/ali.jpeg"> </ion-img>
-    <ion-card-title> </ion-card-title>
-  </ion-card>
-
-  <ion-card>
-    <ion-img src="assets/child-parent.jpeg"> </ion-img>
-    <ion-card-title> </ion-card-title>
   </ion-card>
 </ion-content>

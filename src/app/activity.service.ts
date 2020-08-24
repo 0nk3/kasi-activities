@@ -15,7 +15,7 @@ export class ActivityService {
   getActivity(id: number) {
     const url = `${this.activitiesUrl}/${id}`;
     return this.httpClient.get<IActivities>(url).pipe(
-      tap((_) => this.log(`fetched hero id=${id}`)),
+      tap((_) => this.log(`fetched activity id=${id}`)),
       catchError(this.handleError)
     );
   }

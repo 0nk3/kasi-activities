@@ -2,8 +2,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { IActivities } from 'src/activities';
 
-import { IActivities } from './../activities';
 
 @Injectable({
   providedIn: "root",
@@ -12,12 +12,8 @@ export class ActivityService {
   private activitiesUrl = "api/activity/activities.json";
   constructor(private httpClient: HttpClient) {}
 
-  getActivity(id: number) {
-    const url = `${this.activitiesUrl}/${id}`;
-    return this.httpClient.get<IActivities>(url).pipe(
-      tap((_) => this.log(`fetched activity id=${id}`)),
-      catchError(this.handleError)
-    );
+  getActivity(activityID: number) {
+    return this.httpClient.get<IActivities>(this.activitiesUrl + "/id/" + activityID);
   }
   private log(message: string) {
     console.log(message);

@@ -15,10 +15,8 @@ var ActivityService = /** @class */ (function () {
         this.httpClient = httpClient;
         this.activitiesUrl = "api/activity/activities.json";
     }
-    ActivityService.prototype.getActivity = function (id) {
-        var _this = this;
-        var url = this.activitiesUrl + "/" + id;
-        return this.httpClient.get(url).pipe(operators_1.tap(function (_) { return _this.log("fetched activity id=" + id); }), operators_1.catchError(this.handleError));
+    ActivityService.prototype.getActivity = function (activityID) {
+        return this.httpClient.get(this.activitiesUrl + "/id/" + activityID);
     };
     ActivityService.prototype.log = function (message) {
         console.log(message);

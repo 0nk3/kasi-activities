@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IActivities } from 'src/activities';
 
+import { ActivityService } from '../activity.service';
+
 @Component({
   selector: "app-tab1",
   templateUrl: "tab1.page.html",
@@ -59,13 +61,13 @@ export class Tab1Page implements OnInit {
     },
   ];
 
-  // constructor(private activityService: ActivityService) {}
-  // // life cycle hooks
+  constructor(private activityService: ActivityService) {}
+  // life cycle hooks
   ngOnInit(): void {
-  //   //   console.log("Data Receiving stage");
-  //   //   this.activityService.getAllActivities().subscribe({
-  //   //     next: (activityList) => (this.activityList = activityList),
-  //   //     error: (err) => (this.errorMessage = err),
-  //   // });
+      console.log("Data Receiving stage");
+      this.activityService.getAllActivities().subscribe({
+        next: (activityList) => (this.activityList = activityList),
+        error: (err) => (this.errorMessage = err),
+    });
   }
 }

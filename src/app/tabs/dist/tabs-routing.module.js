@@ -20,7 +20,7 @@ var routes = [
                 children: [
                     {
                         path: "",
-                        loadChildren: "../tab1/tab1.module#Tab1PageModule"
+                        loadChildren: "./tab1/tab1.module#Tab1PageModule"
                     },
                     {
                         path: "activity-detail/:activityID",

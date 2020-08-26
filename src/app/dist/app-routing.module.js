@@ -13,11 +13,7 @@ var routes = [
     {
         path: "",
         loadChildren: function () { return Promise.resolve().then(function () { return require("./tabs/tabs.module"); }).then(function (m) { return m.TabsPageModule; }); }
-    },
-    {
-        path: "activity-detail",
-        loadChildren: function () { return Promise.resolve().then(function () { return require("./activity-detail/activity-detail.module"); }).then(function (m) { return m.ActivityDetailPageModule; }); }
-    },
+    }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {

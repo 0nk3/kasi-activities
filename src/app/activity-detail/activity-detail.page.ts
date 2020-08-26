@@ -11,14 +11,13 @@ import { ActivityService } from './../activity.service';
   styleUrls: ["./activity-detail.page.scss"],
 })
 export class ActivityDetailPage implements OnInit {
-  activityID: number;
+  // activityID: number;
   activityDetail: Observable<IActivities>;
-  constructor(private activityService: ActivityService, activatedRoute: ActivatedRoute) {
+  constructor(activityService: ActivityService, activatedRoute: ActivatedRoute) {
     const activityID = activatedRoute.snapshot.params.activityID;
-    // console.log(activityID);  //which activity is clicked
+    console.log("clicked " + activityID); // which activity is clicked
+    this.activityDetail = activityService.getActivity(activityID);
   }
 
-  ngOnInit() {
-    this.activityDetail = this.activityService.getActivity(this.activityID);
-  }
+  ngOnInit() {}
 }

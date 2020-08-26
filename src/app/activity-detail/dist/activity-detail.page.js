@@ -12,11 +12,10 @@ var ActivityDetailPage = /** @class */ (function () {
     function ActivityDetailPage(activityService, activatedRoute) {
         this.activityService = activityService;
         var activityID = activatedRoute.snapshot.params.activityID;
-        // console.log(activityID);  //which activity is clicked
+        console.log("clicked " + activityID); // which activity is clicked
+        this.activityDetail = this.activityService.getActivity(activityID);
     }
-    ActivityDetailPage.prototype.ngOnInit = function () {
-        this.activityDetail = this.activityService.getActivity(this.activityID);
-    };
+    ActivityDetailPage.prototype.ngOnInit = function () { };
     ActivityDetailPage = __decorate([
         core_1.Component({
             selector: "app-activity-detail",

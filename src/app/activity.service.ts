@@ -1,7 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { IActivities } from 'src/activities';
 
 
@@ -20,8 +20,7 @@ export class ActivityService {
   }
   getAllActivities(): Observable<IActivities[]> {
     return this.httpClient.get<IActivities[]>(this.activitiesUrl).pipe(
-      tap((data) => console.log("All: " + JSON.stringify(data))),
-      catchError(this.handleError)
+      tap((data) => console.log("All: " + JSON.stringify(data)))
     );
   }
   private handleError(err: HttpErrorResponse) {

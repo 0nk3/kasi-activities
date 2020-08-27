@@ -3,8 +3,17 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>ActivityDetail</ion-title>
+    <ion-title>Activity Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <ion-img [src]="(activityDetail).imageURL"></ion-img>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{activityDetail.name}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content> hhghbhbhfg</ion-card-content>
+  </ion-card>
+</ion-content>

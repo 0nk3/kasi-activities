@@ -60,14 +60,13 @@ export class Tab1Page implements OnInit {
       keywords: "mama, mother, love, bonding, women, african",
     },
   ];
-
   constructor(private activityService: ActivityService) {}
   // life cycle hooks
   ngOnInit(): void {
-      console.log("Data Receiving stage");
-      this.activityService.getAllActivities().subscribe({
-        next: (activityList) => (this.activityList = activityList),
-        error: (err) => (this.errorMessage = err),
+    console.log("Data Receiving stage . . .");
+    this.activityService.getAllActivities().subscribe({
+      next: (activityList) => (this.activityList = activityList),
+      error: (err) => (this.errorMessage = err),
     });
   }
 }

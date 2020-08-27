@@ -13,10 +13,15 @@ import { ActivityService } from './../activity.service';
 export class ActivityDetailPage implements OnInit {
   // activityID: number;
   activityDetail: Observable<IActivities>;
-  constructor(activityService: ActivityService, activatedRoute: ActivatedRoute) {
+
+  constructor(
+    activityService: ActivityService,
+    activatedRoute: ActivatedRoute
+    ) {
     const activityID = activatedRoute.snapshot.params.activityID;
     console.log("clicked " + activityID); // which activity is clicked
     this.activityDetail = activityService.getActivity(activityID);
+    console.log("data : " + activityService.getActivity(3));
   }
 
   ngOnInit() {}

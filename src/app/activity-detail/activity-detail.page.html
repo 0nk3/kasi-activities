@@ -8,12 +8,13 @@
 </ion-header>
 
 <ion-content>
-  <ion-img [src]="(activityDetail).imageURL"></ion-img>
+  <ion-img [src]="activityDetail.imageURL"></ion-img>
 
-  <ion-card>
+  <ion-card no-margin *ngIf="activityDetail">
     <ion-card-header>
-      <ion-card-title> Title</ion-card-title>
+      <ion-card-title> Title {{activityDetail.namel}}</ion-card-title>
     </ion-card-header>
+    <ion-card-subtitle> Sub Title</ion-card-subtitle>
     <ion-card-content> description</ion-card-content>
   </ion-card>
 </ion-content>

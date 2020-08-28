@@ -70,10 +70,12 @@ export class Tab1Page implements OnInit {
       keywords: "kota, saloon,mkhukhu, zozo",
     },
   ];
+
   constructor(private activityService: ActivityService) {}
   // life cycle hooks
   ngOnInit(): void {
     console.log("Data Receiving stage . . .");
+    console.log("Inside ngInit: " + JSON.stringify(this.activityList));
     this.activityService.getAllActivities().subscribe({
       next: (activityList) => (this.activityList = activityList),
       error: (err) => (this.errorMessage = err),

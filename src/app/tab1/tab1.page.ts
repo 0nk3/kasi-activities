@@ -59,6 +59,16 @@ export class Tab1Page implements OnInit {
       category: "Parenting",
       keywords: "mama, mother, love, bonding, women, african",
     },
+    {
+      id: 0,
+      name: "Mkhukhu",
+      description:
+        "This is famously called umkhukhu/izozo, and its a form of shelter for poor south africans. Some use it to run spaza shops, saloons, amakota(bunny chow) etc",
+      imageURL: "assets/mkhukhu.png",
+      popularity: 10,
+      category: "Shelter",
+      keywords: "kota, saloon,mkhukhu, zozo",
+    },
   ];
   constructor(private activityService: ActivityService) {}
   // life cycle hooks
